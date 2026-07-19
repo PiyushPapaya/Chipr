@@ -93,20 +93,22 @@ export function CodeViewer({ files }: { files: GenFile[] }) {
         {files.map((f, i) => (
           <button key={f.name} onClick={() => setActive(i)}
             aria-pressed={i === active}
-            className={`focusable rounded px-2 py-1 font-mono transition-colors ${
-              i === active ? "bg-[var(--accent)] text-black" : "panel text-[var(--muted)] hover:text-[var(--text)]"}`}>
+            className={`focusable rounded-lg border px-2 py-1 font-mono transition-colors ${
+              i === active
+                ? "border-[var(--border-bright)] bg-[var(--panel-2)] text-[var(--text)] shadow-[inset_0_-2px_0_var(--accent)]"
+                : "border-transparent bg-[var(--panel)] text-[var(--muted)] hover:text-[var(--text)]"}`}>
             {f.name}
           </button>
         ))}
         <div className="ml-auto flex gap-1.5">
-          <button className="focusable panel px-2 py-1 hover:text-[var(--text)]" onClick={copy}>Copy</button>
-          <button className="focusable panel px-2 py-1 hover:text-[var(--text)]" onClick={download}>Download</button>
-          <button className="focusable rounded bg-[var(--link)] px-2 py-1 font-medium text-black" onClick={downloadZip}>Download .zip</button>
+          <button className="focusable panel rounded-lg px-2 py-1 hover:text-[var(--text)]" onClick={copy}>Copy</button>
+          <button className="focusable panel rounded-lg px-2 py-1 hover:text-[var(--text)]" onClick={download}>Download</button>
+          <button className="focusable rounded-lg bg-[var(--link)] px-2 py-1 font-medium text-black" onClick={downloadZip}>Download .zip</button>
         </div>
       </div>
       <div
         ref={codeRef}
-        className="max-h-[60vh] overflow-auto rounded border border-[var(--border)] text-step--1 [&_pre]:!bg-[var(--panel)] [&_pre]:p-3"
+        className="max-h-[60vh] overflow-auto rounded-lg border border-[var(--border)] text-step--1 [&_pre]:!bg-[var(--panel)] [&_pre]:p-3"
         dangerouslySetInnerHTML={{ __html: html || `<pre>${file.content.replace(/</g, "&lt;")}</pre>` }}
       />
     </div>

@@ -20,7 +20,7 @@ export function Hero({ busy, status, extractPhase, registersFound, onFile, onLoa
       className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-8 px-6 pt-[7vh] lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:pt-[10vh]"
     >
       {/* Left: pitch + action */}
-      <div className="flex flex-col items-center gap-5 text-center lg:items-start lg:text-left">
+      <div className="flex flex-col items-center gap-[var(--space-5)] text-center lg:items-start lg:text-left">
         <motion.p variants={riseIn} className="font-mono text-step--1 uppercase tracking-[0.3em] text-[var(--muted)]">
           Datasheet → C Driver
         </motion.p>

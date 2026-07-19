@@ -25,7 +25,10 @@ export function ExtractProgress({ phase, registersFound, status }: {
   const activeIdx = phase ? PHASES.findIndex((p) => p.id === phase) : 0;
 
   return (
-    <div className="panel-raised relative flex h-72 w-full max-w-xl flex-col justify-center gap-4 overflow-hidden px-6">
+    <div
+      className="panel-raised relative flex h-72 w-full max-w-xl flex-col justify-center gap-4 overflow-hidden px-6"
+      style={{ borderRadius: "var(--radius-lg)" }}
+    >
       {/* Calm vertical scan sweep — instrument reading its target. */}
       {!reduced && (
         <div className="pointer-events-none absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[rgba(61,220,145,0.10)] to-transparent scanline" aria-hidden />

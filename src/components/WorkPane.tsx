@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { RegisterTable } from "@/components/RegisterTable";
 import { CodeViewer } from "@/components/CodeViewer";
 import { InitTimeline } from "@/components/InitTimeline";
+import { useReducedMotion } from "@/lib/motion/reducedMotion";
 import type { RegisterMap } from "@/lib/schema/registerMap";
 import type { InitResult } from "@/lib/generate/initSequence";
 
@@ -19,6 +20,7 @@ export function WorkPane({
 }) {
   const generated = files.length > 0;
   const [tab, setTab] = useState<Tab>("registers");
+  const reduced = useReducedMotion();
   const tabRefs = useRef<Record<Tab, HTMLButtonElement | null>>({ registers: null, code: null, init: null });
   const tabs: { id: Tab; label: string; disabled?: boolean }[] = [
     { id: "registers", label: "Registers" },
@@ -51,9 +53,16 @@ export function WorkPane({
             aria-selected={tab === t.id} tabIndex={tab === t.id ? 0 : -1}
             ref={(el) => { tabRefs.current[t.id] = el; }}
             disabled={t.disabled} onClick={() => setTab(t.id)} onKeyDown={(e) => onTabKey(e, i)}
-            className={`focusable rounded px-2.5 py-1 font-mono text-step--1 transition-colors disabled:opacity-40 ${
-              tab === t.id ? "bg-[var(--panel-2)] text-[var(--text)]" : "text-[var(--muted)] hover:text-[var(--text)]"}`}>
-            {t.label}
+            className={`focusable relative rounded-lg px-2.5 py-1 font-mono text-step--1 transition-colors disabled:opacity-40 ${
+              tab === t.id ? "text-[var(--text)]" : "text-[var(--muted)] hover:text-[var(--text)]"}`}>
+            <span className="relative z-10">{t.label}</span>
+            {tab === t.id && (
+              <motion.span
+                layoutId="workpane-tab-active"
+                className="absolute inset-0 rounded-lg bg-[var(--panel-2)] shadow-[inset_0_-2px_0_var(--accent)]"
+                transition={reduced ? { duration: 0 } : { duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+              />
+            )}
           </button>
         ))}
         <span className="ml-auto font-mono text-step--1 text-[var(--muted)]">

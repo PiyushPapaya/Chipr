@@ -31,6 +31,10 @@
   --muted: #8b97a3;
   --muted-strong: #aab4be; /* for small mono that must stay legible */
 
+  /* Radius scales with element size — small hit targets stay tight (Tailwind's
+     default 4px `rounded`), mid-size controls (buttons/inputs/chips/badges)
+     use --radius, standalone cards/overlays use --radius-lg. Never mix scales
+     on siblings that share a row. */
   --radius: 8px;
   --radius-lg: 12px;
 
@@ -43,11 +47,11 @@
   --step-4:  clamp(1.875rem, 1.6rem + 1.4vw, 2.75rem);      /* ~30–44       */
   --step-5:  clamp(2.375rem, 1.9rem + 2.4vw, 3.5rem);       /* hero         */
 
-  /* Spacing rhythm */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
+  /* Spacing rhythm — panel-internal spacing (px-3/py-2 etc.) already sits on
+     Tailwind's native 4px scale, which these tokens duplicated 1:1, so that
+     tier was dropped. What's left are the two non-standard values used for
+     rhythm *between* major regions (hero content stack, section gaps),
+     where a fixed value reads more intentional than Tailwind's nearest step. */
   --space-5: 1.5rem;
   --space-6: 2.25rem;
 
@@ -63,7 +67,21 @@ body {
   color: var(--text);
   font-family: var(--font-sans), system-ui, sans-serif;
   font-size: var(--step-0);
-  /* Dotted field, brightest center, fading outward via radial mask. */
+  position: relative;
+}
+
+/* Dotted field, brightest center, fading outward via radial mask.
+   This lives on a fixed, viewport-sized pseudo-element rather than on `body`
+   itself — `mask-image` masks an element's entire rendered output, children
+   included, so putting it directly on `body` was clipping real page content
+   (the trust line, meta row) into invisibility once the document grew taller
+   than one viewport, e.g. on mobile. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size: 24px 24px;
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 32%, #000 35%, transparent 100%);

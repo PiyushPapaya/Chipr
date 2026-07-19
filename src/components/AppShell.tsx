@@ -65,7 +65,7 @@ export function AppShell(props: {
             className="panel flex flex-wrap items-center justify-between gap-3 border-[var(--error)] px-3 py-2 text-step-0 text-[var(--error)]">
             <span>{props.error}</span>
             <button onClick={props.onRetry}
-              className="focusable rounded border border-[var(--error)] px-2 py-1 font-mono text-step--1 text-[var(--error)] transition-colors hover:bg-[rgba(240,101,108,0.12)]">
+              className="focusable rounded-lg border border-[var(--error)] px-2 py-1 font-mono text-step--1 text-[var(--error)] transition-colors hover:bg-[rgba(240,101,108,0.12)]">
               Retry
             </button>
           </div>

@@ -5,7 +5,7 @@ const REPO = "https://github.com/PiyushPapaya/RegForge";
 
 export function SiteFooter() {
   return (
-    <footer className="mx-auto mt-8 max-w-7xl px-6 py-6">
+    <footer className="mx-auto mt-[var(--space-6)] max-w-7xl px-6 py-6">
       <div className="flex flex-col gap-3 border-t border-[var(--border)] pt-5 text-step--1 text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
         <p className="flex items-center gap-2">
           <ShieldCheckIcon className="shrink-0 text-[var(--accent)]" style={{ fontSize: "1rem" }} />

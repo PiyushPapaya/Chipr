@@ -17,10 +17,17 @@ export function HeroPreview() {
     : { repeat: Infinity, repeatType: "reverse" as const, duration: 2.2, ease: "easeInOut" as const };
 
   return (
-    <div className="panel-raised w-full overflow-hidden p-4 text-left" aria-hidden>
-      <div className="mb-3 flex items-center gap-2 font-mono text-step--1 text-[var(--muted)]">
-        <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
-        register map → driver
+    <div
+      className="panel-raised w-full overflow-hidden p-4 text-left"
+      style={{ borderRadius: "var(--radius-lg)" }}
+      aria-hidden
+    >
+      <div className="mb-3 flex items-center justify-between gap-2 font-mono text-step--1 text-[var(--muted)]">
+        <span className="flex items-center gap-2">
+          <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+          register map → driver
+        </span>
+        <span className="text-[var(--muted)]">sample output</span>
       </div>
 
       {/* Extracted register rows */}

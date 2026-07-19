@@ -41,10 +41,11 @@ export function SiteHeader({
             </span>
           </Link>
           <div className="hidden sm:block"><StageRail current={stage} substatus={substatus} /></div>
+          {/* Compact dots-only rail on mobile — visible at rest, not just while busy. */}
+          <div className="sm:hidden"><StageRail current={stage} compact /></div>
         </div>
         <ProviderControl provider={provider} apiKey={apiKey} onProvider={onProvider} onKey={onKey} />
       </div>
-      {/* Mobile-only progress strip — the rail is hidden below sm, so phones would otherwise go dark. */}
       {mobileStatus && (
         <div className="mt-2 flex items-center gap-2 font-mono text-step--1 text-[var(--accent)] sm:hidden">
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--accent)]" aria-hidden />
