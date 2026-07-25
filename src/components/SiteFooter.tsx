@@ -9,7 +9,7 @@ export function SiteFooter() {
       <div className="flex flex-col gap-3 border-t border-[var(--border)] pt-5 text-step--1 text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
         <p className="flex items-center gap-2">
           <ShieldCheckIcon className="shrink-0 text-[var(--accent)]" style={{ fontSize: "1rem" }} />
-          <span>BYOK API keys are never stored or logged — sent only with your own request.</span>
+          <span>BYOK API keys are never stored or logged, sent only with your own request.</span>
         </p>
         <div className="flex items-center gap-4 font-mono">
           <a href={REPO} target="_blank" rel="noopener noreferrer"

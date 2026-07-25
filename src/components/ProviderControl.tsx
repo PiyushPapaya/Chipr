@@ -138,7 +138,7 @@ export function ProviderControl({
               placeholder="Leave blank to use server default"
               className="focusable w-full rounded-lg border border-[var(--border)] bg-[var(--bg)] px-2 py-1.5 text-[var(--text)] outline-none"
             />
-            <p className="mt-2 text-[var(--muted)]">Never stored — sent only with your request.</p>
+            <p className="mt-2 text-[var(--muted)]">Never stored, sent only with your request.</p>
           </motion.div>
         )}
       </AnimatePresence>

@@ -9,7 +9,7 @@ export function InitTimeline({ init }: { init: InitResult | null }) {
     <div>
       {init.degraded && (
         <p className="mb-3 rounded-lg border border-[var(--warn)] bg-[rgba(224,168,94,0.08)] px-3 py-2 text-xs text-[var(--warn)]">
-          Init reasoning unavailable — showing raw hints from the datasheet.
+          Init reasoning unavailable. Showing raw hints from the datasheet.
         </p>
       )}
       <ol className="relative ml-3 space-y-3 border-l border-[var(--border)] pl-5">

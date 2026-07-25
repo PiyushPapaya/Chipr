@@ -87,10 +87,10 @@ export function WorkPane({
           <motion.button
             whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}
             onClick={onGenerate} disabled={busy}
-            className="focusable w-full rounded-lg px-4 py-2.5 font-medium text-black transition-shadow disabled:opacity-50"
+            className="focusable w-full rounded-lg px-4 py-2.5 font-medium text-white transition-shadow disabled:opacity-50"
             style={{
               background: "linear-gradient(90deg, var(--accent), var(--accent-bright))",
-              boxShadow: "0 0 0 1px rgba(61,220,145,0.4), 0 8px 24px -10px rgba(61,220,145,0.5)",
+              boxShadow: "0 0 0 1px rgba(108,99,255,0.4), 0 8px 24px -10px rgba(108,99,255,0.55)",
             }}>
             {busy ? "Generating…" : generated ? "Re-generate Driver →" : "Generate Driver →"}
           </motion.button>

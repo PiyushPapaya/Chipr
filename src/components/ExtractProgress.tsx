@@ -31,7 +31,7 @@ export function ExtractProgress({ phase, registersFound, status }: {
     >
       {/* Calm vertical scan sweep — instrument reading its target. */}
       {!reduced && (
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[rgba(61,220,145,0.10)] to-transparent scanline" aria-hidden />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[rgba(108,99,255,0.12)] to-transparent scanline" aria-hidden />
       )}
 
       <ol className="flex flex-col gap-3 font-mono text-step-0">
@@ -46,7 +46,7 @@ export function ExtractProgress({ phase, registersFound, status }: {
               }`}>
                 {state === "active" && !reduced && (
                   <motion.span className="absolute inset-0 rounded-full"
-                    animate={{ boxShadow: ["0 0 0 0 rgba(94,240,168,0.5)", "0 0 0 6px rgba(94,240,168,0)"] }}
+                    animate={{ boxShadow: ["0 0 0 0 rgba(138,130,255,0.5)", "0 0 0 6px rgba(138,130,255,0)"] }}
                     transition={{ duration: 1.4, repeat: Infinity }} />
                 )}
               </span>

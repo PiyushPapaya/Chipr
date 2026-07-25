@@ -12,18 +12,18 @@ type GenFile = { name: string; content: string };
 const REGFORGE_THEME: ThemeRegistrationRaw = {
   name: "regforge",
   type: "dark",
-  colors: { "editor.background": "#0e1014", "editor.foreground": "#e6edf3" },
+  colors: { "editor.background": "#131316", "editor.foreground": "#f3f3f6" },
   settings: [
-    { scope: ["comment", "punctuation.definition.comment"], settings: { foreground: "#8b97a3", fontStyle: "italic" } },
-    { scope: ["keyword", "storage", "storage.type", "storage.modifier", "keyword.control"], settings: { foreground: "#3ddc91" } },
-    { scope: ["meta.preprocessor", "keyword.control.directive", "punctuation.definition.directive"], settings: { foreground: "#5ef0a8" } },
-    { scope: ["string", "string.quoted", "constant.character"], settings: { foreground: "#e0a85e" } },
-    { scope: ["constant.numeric", "constant.language", "constant.other"], settings: { foreground: "#6c7cf0" } },
-    { scope: ["entity.name.function", "support.function", "meta.function-call"], settings: { foreground: "#5aa9e6" } },
-    { scope: ["entity.name.type", "support.type", "storage.type.built-in"], settings: { foreground: "#5aa9e6" } },
-    { scope: ["support.type.property-name", "meta.structure.dictionary.key", "string.json"], settings: { foreground: "#5aa9e6" } },
-    { scope: ["variable", "meta.definition.variable", "entity.name"], settings: { foreground: "#e6edf3" } },
-    { scope: ["punctuation", "meta.brace"], settings: { foreground: "#8b97a3" } },
+    { scope: ["comment", "punctuation.definition.comment"], settings: { foreground: "#8c8c96", fontStyle: "italic" } },
+    { scope: ["keyword", "storage", "storage.type", "storage.modifier", "keyword.control"], settings: { foreground: "#8a82ff" } },
+    { scope: ["meta.preprocessor", "keyword.control.directive", "punctuation.definition.directive"], settings: { foreground: "#6c63ff" } },
+    { scope: ["string", "string.quoted", "constant.character"], settings: { foreground: "#e3a34d" } },
+    { scope: ["constant.numeric", "constant.language", "constant.other"], settings: { foreground: "#9aa3b5" } },
+    { scope: ["entity.name.function", "support.function", "meta.function-call"], settings: { foreground: "#b6b6c0" } },
+    { scope: ["entity.name.type", "support.type", "storage.type.built-in"], settings: { foreground: "#9aa3b5" } },
+    { scope: ["support.type.property-name", "meta.structure.dictionary.key", "string.json"], settings: { foreground: "#9aa3b5" } },
+    { scope: ["variable", "meta.definition.variable", "entity.name"], settings: { foreground: "#f3f3f6" } },
+    { scope: ["punctuation", "meta.brace"], settings: { foreground: "#8c8c96" } },
   ],
 };
 
@@ -103,7 +103,7 @@ export function CodeViewer({ files }: { files: GenFile[] }) {
         <div className="ml-auto flex gap-1.5">
           <button className="focusable panel rounded-lg px-2 py-1 hover:text-[var(--text)]" onClick={copy}>Copy</button>
           <button className="focusable panel rounded-lg px-2 py-1 hover:text-[var(--text)]" onClick={download}>Download</button>
-          <button className="focusable rounded-lg bg-[var(--link)] px-2 py-1 font-medium text-black" onClick={downloadZip}>Download .zip</button>
+          <button className="focusable rounded-lg bg-[var(--accent)] px-2 py-1 font-medium text-white transition-colors hover:bg-[var(--accent-bright)]" onClick={downloadZip}>Download .zip</button>
         </div>
       </div>
       <div

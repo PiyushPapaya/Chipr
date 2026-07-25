@@ -15,12 +15,12 @@ const geistMono = Geist_Mono({
 
 const SITE_URL = "https://reg-forge.vercel.app";
 const DESCRIPTION =
-  "Drop a sensor datasheet PDF. RegForge extracts a verified register map, you correct anything the model got wrong, then it generates a header, driver skeleton, and a page-cited init sequence — from deterministic templates, never hallucinated.";
+  "Drop a sensor datasheet PDF. RegForge extracts a verified register map, you correct anything the model got wrong, then it generates a header, driver skeleton, and a page-cited init sequence, all from deterministic templates, never hallucinated.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "RegForge — datasheet → C driver",
+    default: "RegForge · datasheet → C driver",
     template: "%s · RegForge",
   },
   description: DESCRIPTION,
@@ -31,12 +31,12 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "RegForge",
-    title: "RegForge — datasheet → C driver",
+    title: "RegForge · datasheet → C driver",
     description: DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: "RegForge — datasheet → C driver",
+    title: "RegForge · datasheet → C driver",
     description: DESCRIPTION,
   },
 };

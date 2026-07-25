@@ -1,6 +1,6 @@
 // src/components/AppShell.tsx
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { loadGsap } from "@/lib/motion/gsap";
 import { prefersReducedMotion } from "@/lib/motion/reducedMotion";
@@ -10,6 +10,7 @@ import { Hero } from "@/components/Hero";
 import { Cockpit } from "@/components/Cockpit";
 import { SourcePane } from "@/components/SourcePane";
 import { WorkPane } from "@/components/WorkPane";
+import { Landing } from "@/components/landing/Landing";
 import type { RegisterMap } from "@/lib/schema/registerMap";
 import type { InitResult } from "@/lib/generate/initSequence";
 import type { Stage } from "@/lib/stages";
@@ -28,6 +29,13 @@ export function AppShell(props: {
   onChange: (m: RegisterMap) => void; onCite: (page: number) => void; onGenerate: () => void;
 }) {
   const inCockpit = props.map != null;
+  // The premium marketing landing page gates the working app — entering it
+  // reveals the same upload/extract/verify/generate flow that used to be
+  // the first thing visitors saw. Once a file is in flight or a map exists,
+  // stay past the gate even without the click (derived, not stored, so it
+  // never needs a setState-in-effect to stay in sync).
+  const [clickedEnter, setClickedEnter] = useState(false);
+  const entered = clickedEnter || props.busy || inCockpit;
   // One spoken line for assistive tech covering the otherwise-silent extraction.
   const liveMessage = props.busy
     ? props.extractPhase === "extracting"
@@ -49,6 +57,14 @@ export function AppShell(props: {
     });
     return () => { tween?.kill(); };
   }, []);
+  if (!entered) {
+    return (
+      <main className="min-h-screen">
+        <Landing onEnter={() => setClickedEnter(true)} />
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen">
       <div className="glow" aria-hidden ref={glowRef} />

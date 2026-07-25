@@ -123,7 +123,7 @@ export function RegisterTable({ map, onChange, onCite }: {
     <div className="panel-recessed overflow-auto">
       <table className="w-full border-collapse text-step-0">
         <caption className="sr-only">
-          Extracted register map. Cells are editable — correct any value the model got wrong, then generate.
+          Extracted register map. Cells are editable, so correct any value the model got wrong, then generate.
         </caption>
         <thead className="sticky top-0 z-10 bg-[var(--panel)]/95 backdrop-blur">
           <tr className="text-left font-mono text-step--1 text-[var(--muted)]">
@@ -141,8 +141,8 @@ export function RegisterTable({ map, onChange, onCite }: {
             ) : (
               <motion.tr key={i}
                 className="border-t border-[var(--border)] align-top transition-colors hover:bg-[var(--panel-2)]"
-                initial={{ opacity: 0, y: 6, boxShadow: "inset 2px 0 0 rgba(61,220,145,0.6)" }}
-                animate={{ opacity: 1, y: 0, boxShadow: "inset 0 0 0 rgba(61,220,145,0)" }}
+                initial={{ opacity: 0, y: 6, boxShadow: "inset 2px 0 0 rgba(108,99,255,0.6)" }}
+                animate={{ opacity: 1, y: 0, boxShadow: "inset 0 0 0 rgba(108,99,255,0)" }}
                 transition={{ delay: rowDelay(i, total, false), duration: 0.25 }}>
                 {cells(r, i)}
               </motion.tr>

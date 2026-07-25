@@ -27,18 +27,20 @@ export function DropTarget({ onFile, busy, status }: {
       {...(getRootProps() as unknown as HTMLMotionProps<"div">)}
       whileHover={{ scale: 1.01 }}
       whileTap={{ scale: 0.99 }}
-      className={`focusable group relative flex h-72 w-full max-w-xl cursor-pointer flex-col items-center justify-center gap-3 overflow-hidden rounded-xl border text-center transition-colors ${
-        isDragActive ? "border-[var(--accent)] bg-[rgba(61,220,145,0.06)]" : "border-[var(--border-bright)] bg-[var(--panel)]"
+      style={{ borderRadius: "var(--radius-lg)" }}
+      className={`focusable group relative flex h-72 w-full max-w-xl cursor-pointer flex-col items-center justify-center gap-3 overflow-hidden border text-center transition-colors ${
+        isDragActive ? "border-[var(--accent)] bg-[rgba(108,99,255,0.08)]" : "border-[var(--border-bright)] bg-[var(--panel)]"
       }`}
     >
       <input {...getInputProps()} aria-label="Upload a datasheet PDF" />
       {/* traced gradient ring on idle, brighter on drag */}
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-0 rounded-xl opacity-60"
+        className="pointer-events-none absolute inset-0 opacity-60"
         style={{
+          borderRadius: "var(--radius-lg)",
           padding: 1,
-          background: "linear-gradient(120deg, transparent, rgba(61,220,145,0.35), transparent)",
+          background: "linear-gradient(120deg, transparent, rgba(138,130,255,0.35), transparent)",
           WebkitMask: "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
           WebkitMaskComposite: "xor", maskComposite: "exclude",
         }}

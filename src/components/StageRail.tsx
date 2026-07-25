@@ -37,7 +37,7 @@ export function StageRail({ current, substatus, compact }: { current: Stage; sub
                   {st === "active" && !reduced && (
                     <motion.span
                       className="absolute inset-0 rounded-full"
-                      animate={{ boxShadow: ["0 0 0 0 rgba(94,240,168,0.5)", "0 0 0 5px rgba(94,240,168,0)"] }}
+                      animate={{ boxShadow: ["0 0 0 0 rgba(138,130,255,0.5)", "0 0 0 5px rgba(138,130,255,0)"] }}
                       transition={{ duration: 1.4, repeat: Infinity }}
                     />
                   )}
@@ -80,7 +80,7 @@ export function StageRail({ current, substatus, compact }: { current: Stage; sub
                     <motion.span
                       className="absolute inset-0 rounded-full"
                       style={{ boxShadow: "0 0 0 0 var(--accent-bright)" }}
-                      animate={{ boxShadow: ["0 0 0 0 rgba(94,240,168,0.5)", "0 0 0 6px rgba(94,240,168,0)"] }}
+                      animate={{ boxShadow: ["0 0 0 0 rgba(138,130,255,0.5)", "0 0 0 6px rgba(138,130,255,0)"] }}
                       transition={{ duration: 1.4, repeat: Infinity }}
                     />
                   )}

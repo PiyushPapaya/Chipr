@@ -19,9 +19,9 @@ export function mapProviderError(provider: ProviderName, status: number, _body: 
   const who = label[provider];
   let msg: string;
   if (status === 401 || status === 403) {
-    msg = `${who} rejected this API key — check it or pick another provider.`;
+    msg = `${who} rejected this API key. Check it or pick another provider.`;
   } else if (status === 429) {
-    msg = `${who} is rate-limited or its free tier is exhausted — wait a moment, switch provider, or add your own key.`;
+    msg = `${who} is rate-limited or its free tier is exhausted. Wait a moment, switch provider, or add your own key.`;
   } else {
     msg = `${who} request failed (status ${status}). Try again or pick another provider.`;
   }

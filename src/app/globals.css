@@ -6,37 +6,37 @@
 }
 
 :root {
-  /* Surfaces */
-  --bg: #08090b;
-  --panel: #0e1014;
-  --panel-2: #111418;
-  --panel-raised: #141820; /* WorkPane — the focus surface, lifted above source */
-  --border: #20262e;
-  --border-bright: #2c3742;
+  /* Surfaces — warm near-black, no pure black/white anywhere. */
+  --bg: #0b0b0e;
+  --panel: #131316;
+  --panel-2: #17171b;
+  --panel-raised: #1c1c21; /* WorkPane — the focus surface, lifted above source */
+  --border: #232327;
+  --border-bright: #313138;
 
-  /* Accent — reserved for primary action + "live/active now" only. */
-  --accent: #3ddc91;
-  --accent-bright: #5ef0a8;
-  --done: #2f7d5b;   /* completed states read calmer than the active pulse */
-  --focus: #5ef0a8;  /* focus ring, aliased so it can diverge from accent later */
+  /* Accent — one refined brand color, reserved for primary action + "live/active now". */
+  --accent: #6c63ff;
+  --accent-bright: #8a82ff;
+  --accent-rgb: 108, 99, 255;
+  --done: #4fae7c;   /* completed states read calmer than the active pulse */
+  --focus: #8a82ff;  /* focus ring, aliased so it can diverge from accent later */
 
-  /* Reference / secondary */
-  --link: #5aa9e6;   /* the single citation/reference color */
-  --indigo: #6c7cf0;
-  --warn: #e0a85e;
+  /* Reference / secondary — neutral, never a competing brand hue. */
+  --link: #9aa3b5;
+  --warn: #e3a34d;
   --error: #f0656c;
 
   /* Text */
-  --text: #e6edf3;
-  --muted: #8b97a3;
-  --muted-strong: #aab4be; /* for small mono that must stay legible */
+  --text: #f3f3f6;
+  --muted: #8c8c96;
+  --muted-strong: #b6b6c0;
 
   /* Radius scales with element size — small hit targets stay tight (Tailwind's
      default 4px `rounded`), mid-size controls (buttons/inputs/chips/badges)
      use --radius, standalone cards/overlays use --radius-lg. Never mix scales
      on siblings that share a row. */
-  --radius: 8px;
-  --radius-lg: 12px;
+  --radius: 10px;
+  --radius-lg: 16px;
 
   /* Fluid type scale (minor-third-ish, viewport-aware). */
   --step--1: clamp(0.6875rem, 0.66rem + 0.14vw, 0.75rem);   /* ~11–12 micro */
@@ -46,6 +46,7 @@
   --step-3:  clamp(1.4375rem, 1.3rem + 0.7vw, 1.875rem);    /* ~23–30       */
   --step-4:  clamp(1.875rem, 1.6rem + 1.4vw, 2.75rem);      /* ~30–44       */
   --step-5:  clamp(2.375rem, 1.9rem + 2.4vw, 3.5rem);       /* hero         */
+  --step-6:  clamp(2.75rem, 2.1rem + 3.6vw, 4.75rem);       /* landing hero */
 
   /* Spacing rhythm — panel-internal spacing (px-3/py-2 etc.) already sits on
      Tailwind's native 4px scale, which these tokens duplicated 1:1, so that
@@ -54,8 +55,9 @@
      where a fixed value reads more intentional than Tailwind's nearest step. */
   --space-5: 1.5rem;
   --space-6: 2.25rem;
+  --space-7: 4rem;
 
-  /* Elevation */
+  /* Elevation — soft, low-contrast, premium (no hard neon shadows). */
   --shadow-1: inset 0 1px 0 rgba(255,255,255,0.03), 0 8px 24px -18px rgba(0,0,0,0.8);
   --shadow-2: inset 0 1px 0 rgba(255,255,255,0.06), 0 18px 48px -22px rgba(0,0,0,0.9);
 }
@@ -70,22 +72,20 @@ body {
   position: relative;
 }
 
-/* Dotted field, brightest center, fading outward via radial mask.
-   This lives on a fixed, viewport-sized pseudo-element rather than on `body`
-   itself — `mask-image` masks an element's entire rendered output, children
-   included, so putting it directly on `body` was clipping real page content
-   (the trust line, meta row) into invisibility once the document grew taller
-   than one viewport, e.g. on mobile. */
+/* Quiet, premium field: two soft radial washes fading to the base tone.
+   No dotted grid, no neon glow — just enough depth to keep large dark
+   surfaces from feeling flat. Lives on a fixed pseudo-element so it never
+   clips real content, the same reason the old dotted grid used one. */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
-  background-size: 24px 24px;
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 32%, #000 35%, transparent 100%);
-          mask-image: radial-gradient(ellipse 80% 60% at 50% 32%, #000 35%, transparent 100%);
+  background:
+    radial-gradient(60% 50% at 50% -8%, rgba(108,99,255,0.10), transparent 65%),
+    radial-gradient(45% 40% at 88% 8%, rgba(108,99,255,0.05), transparent 70%),
+    var(--bg);
 }
 
 /* Fluid type-scale utilities. */
@@ -96,16 +96,16 @@ body::before {
 .text-step-3  { font-size: var(--step-3); line-height: 1.2; }
 .text-step-4  { font-size: var(--step-4); line-height: 1.12; }
 .text-step-5  { font-size: var(--step-5); line-height: 1.05; }
+.text-step-6  { font-size: var(--step-6); line-height: 1.02; letter-spacing: -0.02em; }
 
-/* Soft brand glow placed behind the hero. */
+/* Soft brand wash behind the in-app hero — subtler than the landing field,
+   never a decorative focal point. */
 .glow {
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background:
-    radial-gradient(40% 35% at 50% 28%, rgba(61,220,145,0.16), transparent 70%),
-    radial-gradient(45% 40% at 62% 40%, rgba(90,169,230,0.12), transparent 70%);
+  background: radial-gradient(38% 32% at 50% 20%, rgba(108,99,255,0.08), transparent 70%);
   filter: blur(8px);
 }
 
@@ -145,8 +145,13 @@ body::before {
 @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(400%); } }
 .scanline { animation: scan 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
 
+/* Slow ambient drift for landing-page decorative surfaces. */
+@keyframes drift { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(0,-2%,0) scale(1.03); } }
+.drift { animation: drift 14s ease-in-out infinite; }
+
 @media (prefers-reduced-motion: reduce) {
   .assemble { animation: none; }
   .scanline { animation: none; opacity: 0; }
+  .drift { animation: none; }
   .glow { filter: none; }
 }
