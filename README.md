@@ -25,6 +25,14 @@
 
 <br/>
 
+<details>
+<summary><b>See the full landing page</b></summary>
+<br/>
+<img src="docs/media/landing-full.png" alt="Full RegForge landing page, scrolled top to bottom" width="100%" />
+</details>
+
+<br/>
+
 RegForge reads an I²C/SPI sensor datasheet with an LLM and extracts a **structured register
 map**. You **verify and edit** that map inline (the trust checkpoint), then RegForge generates a
 C header, a driver skeleton, and a **cited, ordered init sequence**, each step linked back to the
