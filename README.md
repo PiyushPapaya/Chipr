@@ -8,11 +8,11 @@
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-reg--forge.vercel.app-3ddc91?style=flat-square)](https://reg-forge.vercel.app)
 &nbsp;
+[![CI](https://img.shields.io/github/actions/workflow/status/PiyushPapaya/RegForge/ci.yml?branch=master&style=flat-square&label=CI)](https://github.com/PiyushPapaya/RegForge/actions/workflows/ci.yml)
 ![Next.js 16](https://img.shields.io/badge/Next.js-16-000?style=flat-square&logo=nextdotjs)
 ![React 19](https://img.shields.io/badge/React-19-149eca?style=flat-square&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square&logo=typescript)
 ![Tailwind v4](https://img.shields.io/badge/Tailwind-v4-38bdf8?style=flat-square&logo=tailwindcss)
-![Tests](https://img.shields.io/badge/tests-50_passing-3ddc91?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-8b97a3?style=flat-square)
 
 [**Live demo →**](https://reg-forge.vercel.app)
@@ -149,6 +149,10 @@ Pick the active provider from the dropdown in the top-right. Key resolution per 
 **your BYOK key** (if supplied) → the server's `.env` default → a friendly typed error. Open the
 settings popover next to the dropdown to paste your own key; BYOK keys are **never stored or
 logged** and are sent only to the provider you chose for that one request.
+
+Each provider's env var accepts a **comma-separated list of keys** (e.g. `key1,key2,key3`). The
+app round-robins across the pool on every request and automatically rotates to the next key and
+retries once if the active key comes back rate-limited (HTTP 429).
 
 | Provider  | Model               | Notes                                   |
 |-----------|---------------------|-----------------------------------------|
