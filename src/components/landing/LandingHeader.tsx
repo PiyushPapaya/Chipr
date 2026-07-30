@@ -12,7 +12,7 @@ export function LandingHeader({ onEnter }: { onEnter: () => void }) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/icon.svg" alt="" width={22} height={22} className="rounded-[5px]" />
           <span className="font-mono text-step-1 font-semibold tracking-tight text-[var(--text)]">
-            Reg<span className="text-[var(--accent-bright)]">Forge</span>
+            Chi<span className="text-[var(--accent-bright)]">pr</span>
           </span>
         </div>
         <nav className="hidden items-center gap-7 font-mono text-step--1 text-[var(--muted)] sm:flex">

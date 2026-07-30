@@ -37,7 +37,7 @@ export function SiteHeader({
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/icon.svg" alt="" width={22} height={22} className="rounded-[5px]" />
             <span className="font-mono text-step-1 font-semibold tracking-tight text-[var(--text)]">
-              Reg<span className="text-[var(--accent)]">Forge</span>
+              Chi<span className="text-[var(--accent)]">pr</span>
             </span>
           </Link>
           <div className="hidden sm:block"><StageRail current={stage} substatus={substatus} /></div>

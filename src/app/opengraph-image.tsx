@@ -19,7 +19,7 @@ export default function OpengraphImage() {
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <div style={{ width: 36, height: 36, borderRadius: 9, background: "#131316", border: "1px solid #313138", display: "flex" }} />
           <div style={{ display: "flex", fontSize: 30, fontWeight: 600, letterSpacing: -0.5 }}>
-            <span>Reg</span><span style={{ color: "#8a82ff" }}>Forge</span>
+            <span>Chi</span><span style={{ color: "#8a82ff" }}>pr</span>
           </div>
         </div>
 
