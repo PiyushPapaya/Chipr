@@ -27,7 +27,7 @@ export function Landing({ onEnter }: { onEnter: () => void }) {
         eyebrow="How it works"
         id="how-it-works"
         title="Four steps, one trust checkpoint."
-        body="Drop the PDF and RegForge streams the extraction live. You verify the register map, the one point a human checks the model's work, then generate a header, driver, and cited init sequence in one pass."
+        body="Drop the PDF and Chipr streams the extraction live. You verify the register map, the one point a human checks the model's work, then generate a header, driver, and cited init sequence in one pass."
       >
         <WorkflowPanel />
       </StorySection>

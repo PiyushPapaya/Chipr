@@ -1,5 +1,5 @@
 {
-  "name": "regforge",
+  "name": "chipr",
   "version": "0.1.0",
   "private": true,
   "description": "Turn a sensor datasheet PDF into a verified register map and a working, page-cited C driver. LLM extraction + schema-validated, deterministic code generation.",
@@ -15,10 +15,10 @@
     "llm",
     "nextjs"
   ],
-  "homepage": "https://reg-forge.vercel.app",
+  "homepage": "https://chipr.vercel.app",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PiyushPapaya/RegForge.git"
+    "url": "https://github.com/PiyushPapaya/Chipr.git"
   },
   "author": "Piyush Nagpal",
   "license": "MIT",
@@ -27,6 +27,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run --passWithNoTests",
     "test:watch": "vitest"
   },

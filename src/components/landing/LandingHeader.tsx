@@ -2,7 +2,7 @@
 "use client";
 import { GithubIcon } from "@/components/icons";
 
-const REPO = "https://github.com/PiyushPapaya/RegForge";
+const REPO = "https://github.com/PiyushPapaya/Chipr";
 
 export function LandingHeader({ onEnter }: { onEnter: () => void }) {
   return (

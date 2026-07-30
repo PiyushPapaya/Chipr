@@ -8,9 +8,9 @@ import { loadGsap } from "@/lib/motion/gsap";
 
 type GenFile = { name: string; content: string };
 
-/** Syntax theme keyed to the RegForge palette so generated code looks like the product. */
-const REGFORGE_THEME: ThemeRegistrationRaw = {
-  name: "regforge",
+/** Syntax theme keyed to the Chipr palette so generated code looks like the product. */
+const CHIPR_THEME: ThemeRegistrationRaw = {
+  name: "chipr",
   type: "dark",
   colors: { "editor.background": "#131316", "editor.foreground": "#f3f3f6" },
   settings: [
@@ -48,7 +48,7 @@ export function CodeViewer({ files }: { files: GenFile[] }) {
     const lang = file.name.endsWith(".c") || file.name.endsWith(".h") ? "c" : "json";
     // Load shiki on demand — it stays out of the initial bundle until code is viewed.
     import("shiki").then(({ codeToHtml }) =>
-      codeToHtml(file.content, { lang, theme: REGFORGE_THEME })
+      codeToHtml(file.content, { lang, theme: CHIPR_THEME })
     ).then((h) => {
       if (!alive) return;
       cache.current.set(key, h);
@@ -84,7 +84,7 @@ export function CodeViewer({ files }: { files: GenFile[] }) {
     const bytes = await buildZip(files);
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([bytes as BlobPart], { type: "application/zip" }));
-    a.download = "regforge-driver.zip"; a.click();
+    a.download = "chipr-driver.zip"; a.click();
   }
 
   return (

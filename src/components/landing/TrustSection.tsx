@@ -23,7 +23,7 @@ export function TrustSection() {
           The model reads. It never writes the driver.
         </h2>
         <p className="mt-3 text-balance text-step-1 text-[var(--muted)]">
-          RegForge confines the LLM to one job: turning a datasheet into a validated data
+          Chipr confines the LLM to one job: turning a datasheet into a validated data
           structure. Everything downstream is deterministic, tested, and cited back to its source.
         </p>
       </motion.div>

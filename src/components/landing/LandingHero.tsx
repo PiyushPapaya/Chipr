@@ -19,7 +19,7 @@ export function LandingHero({ onEnter }: { onEnter: () => void }) {
           Read the datasheet <span className="text-[var(--accent-bright)]">so you don&apos;t have to</span>.
         </motion.h1>
         <motion.p variants={riseIn} className="max-w-xl text-balance text-step-2 text-[var(--muted)]">
-          Drop a sensor datasheet. RegForge extracts a verified register map, you check it,
+          Drop a sensor datasheet. Chipr extracts a verified register map, you check it,
           and it generates a cited, working C driver that&apos;s never hallucinated.
         </motion.p>
         <motion.div variants={riseIn} className="mt-2 flex flex-wrap items-center justify-center gap-3">

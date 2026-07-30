@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRightIcon, GithubIcon } from "@/components/icons";
 import { riseIn } from "@/lib/motion/variants";
 
-const REPO = "https://github.com/PiyushPapaya/RegForge";
+const REPO = "https://github.com/PiyushPapaya/Chipr";
 
 export function LandingCTA({ onEnter }: { onEnter: () => void }) {
   return (
@@ -29,7 +29,7 @@ export function LandingCTA({ onEnter }: { onEnter: () => void }) {
               boxShadow: "0 0 0 1px rgba(108,99,255,0.4), 0 16px 32px -14px rgba(108,99,255,0.55)",
             }}
           >
-            Open RegForge
+            Open Chipr
             <ArrowRightIcon className="transition-transform group-hover:translate-x-0.5" style={{ fontSize: "1.05rem" }} />
           </button>
           <a href={REPO} target="_blank" rel="noopener noreferrer"

@@ -1,40 +1,40 @@
 <div align="center">
 
-<img src="src/app/icon.svg" width="60" alt="RegForge logo" />
+<img src="src/app/icon.svg" width="60" alt="Chipr logo" />
 
-# RegForge
+# Chipr
 
 **Turn a sensor datasheet PDF into a verified register map and a working, page-cited C driver.**
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-reg--forge.vercel.app-3ddc91?style=flat-square)](https://reg-forge.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-chipr.vercel.app-3ddc91?style=flat-square)](https://chipr.vercel.app)
 &nbsp;
-[![CI](https://img.shields.io/github/actions/workflow/status/PiyushPapaya/RegForge/ci.yml?branch=master&style=flat-square&label=CI)](https://github.com/PiyushPapaya/RegForge/actions/workflows/ci.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/PiyushPapaya/Chipr/ci.yml?branch=master&style=flat-square&label=CI)](https://github.com/PiyushPapaya/Chipr/actions/workflows/ci.yml)
 ![Next.js 16](https://img.shields.io/badge/Next.js-16-000?style=flat-square&logo=nextdotjs)
 ![React 19](https://img.shields.io/badge/React-19-149eca?style=flat-square&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square&logo=typescript)
 ![Tailwind v4](https://img.shields.io/badge/Tailwind-v4-38bdf8?style=flat-square&logo=tailwindcss)
 ![License](https://img.shields.io/badge/license-MIT-8b97a3?style=flat-square)
 
-[**Live demo →**](https://reg-forge.vercel.app)
+[**Live demo →**](https://chipr.vercel.app)
 
 </div>
 
 <br/>
 
-<img src="docs/media/hero-desktop.png" alt="RegForge landing page" width="100%" />
+<img src="docs/media/hero-desktop.png" alt="Chipr landing page" width="100%" />
 
 <br/>
 
 <details>
 <summary><b>See the full landing page</b></summary>
 <br/>
-<img src="docs/media/landing-full.png" alt="Full RegForge landing page, scrolled top to bottom" width="100%" />
+<img src="docs/media/landing-full.png" alt="Full Chipr landing page, scrolled top to bottom" width="100%" />
 </details>
 
 <br/>
 
-RegForge reads an I²C/SPI sensor datasheet with an LLM and extracts a **structured register
-map**. You **verify and edit** that map inline (the trust checkpoint), then RegForge generates a
+Chipr reads an I²C/SPI sensor datasheet with an LLM and extracts a **structured register
+map**. You **verify and edit** that map inline (the trust checkpoint), then Chipr generates a
 C header, a driver skeleton, and a **cited, ordered init sequence**, each step linked back to the
 datasheet page it came from. The generated code comes from **deterministic templates**, not the
 model, so it's never hallucinated.
@@ -205,7 +205,7 @@ src/
 
 ## Status & roadmap
 
-RegForge is a working demo, deployed and tested. Possible next steps:
+Chipr is a working demo, deployed and tested. Possible next steps:
 
 - Wider chip coverage (multi-bank register files, paged maps).
 - Per-field confidence surfaced from the model.
@@ -218,5 +218,5 @@ RegForge is a working demo, deployed and tested. Possible next steps:
 [MIT](LICENSE) © Piyush Nagpal
 
 <div align="center">
-<sub>Built with Next.js · <a href="https://reg-forge.vercel.app">reg-forge.vercel.app</a></sub>
+<sub>Built with Next.js · <a href="https://chipr.vercel.app">chipr.vercel.app</a></sub>
 </div>

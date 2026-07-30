@@ -13,30 +13,30 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://reg-forge.vercel.app";
+const SITE_URL = "https://chipr.vercel.app";
 const DESCRIPTION =
-  "Drop a sensor datasheet PDF. RegForge extracts a verified register map, you correct anything the model got wrong, then it generates a header, driver skeleton, and a page-cited init sequence, all from deterministic templates, never hallucinated.";
+  "Drop a sensor datasheet PDF. Chipr extracts a verified register map, you correct anything the model got wrong, then it generates a header, driver skeleton, and a page-cited init sequence, all from deterministic templates, never hallucinated.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "RegForge · datasheet → C driver",
-    template: "%s · RegForge",
+    default: "Chipr · datasheet → C driver",
+    template: "%s · Chipr",
   },
   description: DESCRIPTION,
-  applicationName: "RegForge",
+  applicationName: "Chipr",
   authors: [{ name: "Piyush Nagpal" }],
   keywords: ["embedded", "firmware", "C driver", "datasheet", "register map", "I2C", "SPI", "code generation"],
   openGraph: {
     type: "website",
     url: SITE_URL,
-    siteName: "RegForge",
-    title: "RegForge · datasheet → C driver",
+    siteName: "Chipr",
+    title: "Chipr · datasheet → C driver",
     description: DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: "RegForge · datasheet → C driver",
+    title: "Chipr · datasheet → C driver",
     description: DESCRIPTION,
   },
 };

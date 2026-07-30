@@ -33,7 +33,7 @@ export function SiteHeader({
     >
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-6">
-          <Link href="/" className="focusable group flex items-center gap-2.5 rounded" aria-label="RegForge home">
+          <Link href="/" className="focusable group flex items-center gap-2.5 rounded" aria-label="Chipr home">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/icon.svg" alt="" width={22} height={22} className="rounded-[5px]" />
             <span className="font-mono text-step-1 font-semibold tracking-tight text-[var(--text)]">

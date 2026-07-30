@@ -5,7 +5,7 @@ import { useReducedMotion } from "@/lib/motion/reducedMotion";
 import { FileTextIcon, ArrowRightIcon, ShieldCheckIcon } from "@/components/icons";
 
 // A tiny, honest sample of the real pipeline: a datasheet page → the
-// register map RegForge extracts from it → the C it deterministically
+// register map Chipr extracts from it → the C it deterministically
 // generates. This is what the product does, not a decorative animation.
 const ROWS = [
   { addr: "0x0F", name: "WHO_AM_I", page: 12, def: "WHO_AM_I 0x0F" },
